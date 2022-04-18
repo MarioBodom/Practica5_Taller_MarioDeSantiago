@@ -70,6 +70,9 @@ public class Trabajo {
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        return "El trabajo con id " + getIdTrabajo() + " es de tipo "+ getDescripcion() + "con un precio de " + getPrecioMaterial() + " y una duración de "+ getHoras();
+        if (finalizado) {
+            return "El trabajo con id " + getIdTrabajo() + " es de tipo "+ getDescripcion() + " con un precio de " + getPrecioMaterial() + " y una duración de "+ getHoras()+" horas, está finalizado";
+            
+        }else return "El trabajo con id " + getIdTrabajo() + " es de tipo "+ getDescripcion() + " con un precio de " + getPrecioMaterial() + " y una duración de "+ getHoras()+" horas, está en curso";
     }
 }

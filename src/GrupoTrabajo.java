@@ -13,8 +13,8 @@ public class GrupoTrabajo {
     public void addTrabajo() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Que tipo de trabajo quiere añadir?\n1. Reparacion chapa\n2. Reparacion pintura\n3. Revisión");
-        int opcion = sc.nextInt();
-        switch (opcion) {
+        int choice = sc.nextInt();
+        switch (choice) {
             case 1:
                 sc.nextLine();
                 System.out.println("Indica una breve descripcion del trabajo (el tipo ya está puesto)");
@@ -35,7 +35,7 @@ public class GrupoTrabajo {
                 System.out.println("La elección no es correcta");
                 break;
         }
-        sc.close();
+        // sc.close();
     }
 
     public ArrayList<Trabajo> getTrabajos() {
@@ -91,7 +91,7 @@ public class GrupoTrabajo {
         int opcion = sc.nextInt();
         for (int i = 0; i < trabajos.size(); i++) {
             if (opcion == i) {
-                trabajos.get(i).toString();
+                System.out.println(trabajos.get(i).toString());
             } else {
                 System.out.println("El trabajo no existe");
             }
