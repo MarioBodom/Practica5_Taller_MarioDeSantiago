@@ -10,4 +10,6 @@ public class App {
             System.out.println(g1.getTrabajos().get(i).toString());
         }
     }
+
+    
 }

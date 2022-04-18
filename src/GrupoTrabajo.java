@@ -35,11 +35,67 @@ public class GrupoTrabajo {
                 System.out.println("La elección no es correcta");
                 break;
         }
+        sc.close();
     }
 
     public ArrayList<Trabajo> getTrabajos() {
         return trabajos;
     }
 
+    public void aumentaHoras() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Cual es el número del trabajo para aumentar las horas?");
+        int opcion = sc.nextInt();
+        for (int i = 0; i < trabajos.size(); i++) {
+            if (opcion == i) {
+                System.out.println("Escribe el número de horas");
+                int horas = sc.nextInt();
+                trabajos.get(i).setHoras(horas);
+            } else {
+                System.out.println("El trabajo no existe");
+            }
+        }
+    }
+
+    public void aumentaCoste() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Cual es el número del trabajo para aumentar el coste?");
+        int opcion = sc.nextInt();
+        for (int i = 0; i < trabajos.size(); i++) {
+            if (opcion == i) {
+                System.out.println("Escribe el número de horas");
+                double precioMaterial = sc.nextDouble();
+                trabajos.get(i).setPrecioMaterial(precioMaterial);
+            } else {
+                System.out.println("El trabajo no existe");
+            }
+        }
+    }
+
+    public void finalizaTrabajo() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Cual es el número del trabajo para finalizar?");
+        int opcion = sc.nextInt();
+        for (int i = 0; i < trabajos.size(); i++) {
+            if (opcion == i) {
+                trabajos.get(i).setFinalizado(true);;
+            } else {
+                System.out.println("El trabajo no existe");
+            }
+        }
+    }
+
+    public void muestraTrabajo() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Cual es el número del trabajo para mostrar?");
+        int opcion = sc.nextInt();
+        for (int i = 0; i < trabajos.size(); i++) {
+            if (opcion == i) {
+                trabajos.get(i).toString();
+            } else {
+                System.out.println("El trabajo no existe");
+            }
+        }
+    }
     
 }
