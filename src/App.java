@@ -12,6 +12,7 @@ public class App {
             switch (opcion) {
                 case "1", "nuevo trabajo":
                     g1.addTrabajo();
+                    
                     break;
                 case "2", "aumentar horas":
                     g1.aumentaHoras();
