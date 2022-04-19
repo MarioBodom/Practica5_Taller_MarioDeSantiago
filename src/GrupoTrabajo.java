@@ -1,4 +1,3 @@
-import java.security.Policy;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -6,7 +5,7 @@ import java.util.Scanner;
 public class GrupoTrabajo {
     ArrayList<Trabajo> trabajos = new ArrayList<>();
     private final String REP_CHA = "Reparacion chapa ";
-    private final String REP_PINT = "Reparacion pintura ";
+    private final String REP_MECA = "Reparacion mecánica ";
     private final String REVISION = "Revisión ";
 
 
@@ -18,17 +17,17 @@ public class GrupoTrabajo {
             case 1:
                 sc.nextLine();
                 System.out.println("Indica una breve descripcion del trabajo (el tipo ya está puesto)");
-                trabajos.add(new Trabajo(REP_CHA + sc.nextLine(), trabajos.size()));
+                trabajos.add(new Trabajo(REP_CHA + sc.nextLine(), trabajos.size(), choice));
                 break;
             case 2:
                 sc.nextLine();
                 System.out.println("Indica una breve descripcion del trabajo (el tipo ya está puesto)");
-                trabajos.add(new Trabajo(REP_PINT + sc.nextLine(), trabajos.size()));
+                trabajos.add(new Trabajo(REP_MECA + sc.nextLine(), trabajos.size(), choice));
                 break;
             case 3:
                 sc.nextLine();
                 System.out.println("Indica una breve descripcion del trabajo (el tipo ya está puesto)");
-                trabajos.add(new Trabajo(REVISION + sc.nextLine(), trabajos.size()));
+                trabajos.add(new Trabajo(REVISION + sc.nextLine(), trabajos.size(), choice));
                 break;
         
             default:
@@ -47,12 +46,12 @@ public class GrupoTrabajo {
         System.out.println("Cual es el número del trabajo para aumentar las horas?");
         int opcion = sc.nextInt();
         for (int i = 0; i < trabajos.size(); i++) {
-            if (opcion == i) {
+            if (opcion == i && !trabajos.get(i).getFinalizado()) {
                 System.out.println("Escribe el número de horas");
                 int horas = sc.nextInt();
                 trabajos.get(i).setHoras(horas);
             } else {
-                System.out.println("El trabajo no existe");
+                System.out.println("El trabajo no existe o está finalizado ya");
             }
         }
     }
@@ -62,12 +61,12 @@ public class GrupoTrabajo {
         System.out.println("Cual es el número del trabajo para aumentar el coste?");
         int opcion = sc.nextInt();
         for (int i = 0; i < trabajos.size(); i++) {
-            if (opcion == i) {
+            if (opcion == i && !trabajos.get(i).getFinalizado()) {
                 System.out.println("Escribe el número de horas");
                 double precioMaterial = sc.nextDouble();
                 trabajos.get(i).setPrecioMaterial(precioMaterial);
             } else {
-                System.out.println("El trabajo no existe");
+                System.out.println("El trabajo no existe o está finalizado ya");
             }
         }
     }
@@ -77,10 +76,10 @@ public class GrupoTrabajo {
         System.out.println("Cual es el número del trabajo para finalizar?");
         int opcion = sc.nextInt();
         for (int i = 0; i < trabajos.size(); i++) {
-            if (opcion == i) {
+            if (opcion == i && !trabajos.get(i).getFinalizado()) {
                 trabajos.get(i).setFinalizado(true);;
             } else {
-                System.out.println("El trabajo no existe");
+                System.out.println("El trabajo no existe o está finalizado ya");
             }
         }
     }

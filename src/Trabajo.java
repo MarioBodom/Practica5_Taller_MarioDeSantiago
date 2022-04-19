@@ -6,10 +6,12 @@ public class Trabajo {
     private boolean finalizado = false;
     private double precioMaterial;
     private int tipoTrabajo;
+    private double precioTotal;
 
-    public Trabajo(String descripcion, int idTrabajo){
+    public Trabajo(String descripcion, int idTrabajo, int tipoTrabajo){
         this.descripcion = descripcion;
         this.idTrabajo = idTrabajo;
+        this.tipoTrabajo = tipoTrabajo;
         // this.idTrabajo = getContadorTrabajo();
         // incrementarContador();
 
@@ -65,6 +67,26 @@ public class Trabajo {
 
     public void setFinalizado(boolean finalizado){
         this.finalizado = finalizado;
+    }
+
+    public double getPrecioTotal() {
+        return precioTotal;
+    }
+
+    public void setPrecioTotal() {
+        switch (getTipoTrabajo()) {
+            case 1:
+                this.precioTotal = this.horas*30 + this.precioMaterial*1.3;
+                break;
+            case 2:
+                this.precioTotal = this.horas*30 + this.precioMaterial*1.1;
+                break;
+            case 3:
+                this.precioTotal = this.horas*30 + 20;
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
