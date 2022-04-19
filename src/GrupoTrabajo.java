@@ -65,7 +65,7 @@ public class GrupoTrabajo {
         int opcion = sc.nextInt();
         for (int i = 0; i < trabajos.size(); i++) {
             if (opcion == i && !trabajos.get(i).getFinalizado()) {
-                System.out.println("Escribe el número de horas");
+                System.out.println("Escribe el coste de los materiales");
                 double precioMaterial = sc.nextDouble();
                 trabajos.get(i).setPrecioMaterial(precioMaterial);
             } else {

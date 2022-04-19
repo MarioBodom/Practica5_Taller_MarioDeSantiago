@@ -42,7 +42,7 @@ public class Trabajo {
     }
 
     public void setHoras(int horas) {
-        this.horas = horas;
+        this.horas += horas;
     }
 
     public double getPrecioMaterial() {
@@ -50,7 +50,7 @@ public class Trabajo {
     }
 
     public void setPrecioMaterial(double precioMaterial) {
-        this.precioMaterial = precioMaterial;
+        this.precioMaterial += precioMaterial;
     }
 
     public int getTipoTrabajo() {
