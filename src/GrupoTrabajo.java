@@ -18,16 +18,19 @@ public class GrupoTrabajo {
                 sc.nextLine();
                 System.out.println("Indica una breve descripcion del trabajo (el tipo ya está puesto)");
                 trabajos.add(new Trabajo(REP_CHA + sc.nextLine(), trabajos.size(), choice));
+                System.out.println("ID del Trabajo: "+ (trabajos.size()-1));
                 break;
             case 2:
                 sc.nextLine();
                 System.out.println("Indica una breve descripcion del trabajo (el tipo ya está puesto)");
                 trabajos.add(new Trabajo(REP_MECA + sc.nextLine(), trabajos.size(), choice));
+                System.out.println("ID del Trabajo: "+ (trabajos.size()-1));
                 break;
             case 3:
                 sc.nextLine();
                 System.out.println("Indica una breve descripcion del trabajo (el tipo ya está puesto)");
                 trabajos.add(new Trabajo(REVISION + sc.nextLine(), trabajos.size(), choice));
+                System.out.println("ID del Trabajo: "+ (trabajos.size()-1));
                 break;
         
             default:
