@@ -93,8 +93,8 @@ public class Trabajo {
     public String toString() {
         // TODO Auto-generated method stub
         if (finalizado) {
-            return "El trabajo con id " + getIdTrabajo() + " es de tipo "+ getDescripcion() + " con un precio de " + getPrecioMaterial() + " y una duración de "+ getHoras()+" horas, está finalizado";
+            return "El trabajo con id " + getIdTrabajo() + " es de tipo "+ getDescripcion() + " con un precio de " + getPrecioTotal() + " y una duración de "+ getHoras()+" horas, está finalizado";
             
-        }else return "El trabajo con id " + getIdTrabajo() + " es de tipo "+ getDescripcion() + " con un precio de " + getPrecioMaterial() + " y una duración de "+ getHoras()+" horas, está en curso";
+        }else return "El trabajo con id " + getIdTrabajo() + " es de tipo "+ getDescripcion() + " con un precio de " + getPrecioTotal() + " y una duración de "+ getHoras()+" horas, está en curso";
     }
 }
