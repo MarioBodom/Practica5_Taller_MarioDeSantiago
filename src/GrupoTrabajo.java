@@ -52,6 +52,10 @@ public class GrupoTrabajo {
             if (opcion == i && !trabajos.get(i).getFinalizado()) {
                 System.out.println("Escribe el número de horas");
                 int horas = sc.nextInt();
+                while (horas <= 0) {
+                    System.out.println("Las horas no pueden ser negativas");
+                    horas = sc.nextInt();
+                }
                 trabajos.get(i).setHoras(horas);
             } else {
                 System.out.println("El trabajo no existe o está finalizado ya");
@@ -67,6 +71,10 @@ public class GrupoTrabajo {
             if (opcion == i && !trabajos.get(i).getFinalizado()) {
                 System.out.println("Escribe el coste de los materiales");
                 double precioMaterial = sc.nextDouble();
+                while (precioMaterial <= 0) {
+                    System.out.println("El precio de los materiales no puede ser negativo");
+                    precioMaterial = sc.nextInt();
+                }
                 trabajos.get(i).setPrecioMaterial(precioMaterial);
             } else {
                 System.out.println("El trabajo no existe o está finalizado ya");
