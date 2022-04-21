@@ -1,5 +1,4 @@
 public class Trabajo {
-    // private static int contadorTrabajo = 0;
     private int idTrabajo;
     private String descripcion;
     private int horas;
@@ -12,18 +11,7 @@ public class Trabajo {
         this.descripcion = descripcion;
         this.idTrabajo = idTrabajo;
         this.tipoTrabajo = tipoTrabajo;
-        // this.idTrabajo = getContadorTrabajo();
-        // incrementarContador();
-
     }
-
-    // private static void incrementarContador() {
-    //     contadorTrabajo++;
-    // }
-
-    // public static int getContadorTrabajo() {
-    //     return contadorTrabajo;
-    // }
 
     public String getDescripcion() {
         return descripcion;
@@ -70,6 +58,7 @@ public class Trabajo {
     }
 
     public double getPrecioTotal() {
+        setPrecioTotal();
         return precioTotal;
     }
 

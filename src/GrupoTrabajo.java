@@ -37,11 +37,6 @@ public class GrupoTrabajo {
                 System.out.println("La elección no es correcta");
                 break;
         }
-        // sc.close();
-    }
-
-    public ArrayList<Trabajo> getTrabajos() {
-        return trabajos;
     }
 
     public void aumentaHoras() {
@@ -58,7 +53,11 @@ public class GrupoTrabajo {
                 }
                 trabajos.get(i).setHoras(horas);
             } else {
-                System.out.println("El trabajo no existe o está finalizado ya");
+                if (trabajos.get(i).getFinalizado()) {
+                    System.out.println("El trabajo está finalizado y no se pueden aumentar las horas.");
+                } else {
+                    System.out.println("El ID del trabajo no existe");
+                }
             }
         }
     }
@@ -77,7 +76,11 @@ public class GrupoTrabajo {
                 }
                 trabajos.get(i).setPrecioMaterial(precioMaterial);
             } else {
-                System.out.println("El trabajo no existe o está finalizado ya");
+                if (trabajos.get(i).getFinalizado()) {
+                    System.out.println("El trabajo está finalizado y no se puede aumentar el precio de los materiales.");
+                } else {
+                    System.out.println("El ID del trabajo no existe");
+                }
             }
         }
     }
@@ -90,7 +93,11 @@ public class GrupoTrabajo {
             if (opcion == i && !trabajos.get(i).getFinalizado()) {
                 trabajos.get(i).setFinalizado(true);;
             } else {
-                System.out.println("El trabajo no existe o está finalizado ya");
+                if (trabajos.get(i).getFinalizado()) {
+                    System.out.println("El trabajo está finalizado y no se puede volver a finalizar.");
+                } else {
+                    System.out.println("El ID del trabajo no existe");
+                }
             }
         }
     }

@@ -33,7 +33,6 @@ public class App {
                     System.out.println("La elección no es correcta");
                     break;
             }
-            // sc.close();
         } while (juego);
 
     }
